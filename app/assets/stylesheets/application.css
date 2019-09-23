@@ -10,46 +10,38 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap/css/bootstrap.min
+ *= require fontawesome-free/css/all.min
+ *= require simple-line-icons/css/simple-line-icons
+ *= require css/stylish-portfolio.min
+ *
  *= require_tree .
  *= require_self
  */
 
- /*------------ Home page ------------*/
-
- #home {
- 	position:fixed;
- 	top:0px;
- 	bottom:0px;
- 	left:0px;
- 	right:0px;
- }
-
- #home-bg {
- 	width: 100%;
- }
-
- h1 {
- 	position: absolute;
- 	bottom: 0;
- 	left: 0;
- 	top: 10px;
- 	right: 0;
- 	display: -webkit-box;
- 	display: -ms-flexbox;
- 	display: flex;
- 	-webkit-box-pack: center;
- 	-ms-flex-pack: center;
- 	justify-content: center;
- 	-webkit-box-align: center;
- 	-ms-flex-align: center;
- 	align-items: center;
- 	-webkit-box-orient: vertical;
- 	-webkit-box-direction: normal;
- 	-ms-flex-direction: column;
- 	flex-direction: column;
- 	text-align: center;
- 	padding: 0 15px;
+/************* Home page **************/
+ h1, h3 {
  	color: white;
+ 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
  }
 
-/*---------- End home page -----------*/
+ .sign-btn {
+ 	border: none;
+ 	margin: 15px;
+ 	padding: 20px;
+ 	width: 220px;
+ 	border-radius: 50px;
+ 	cursor: pointer;
+ 	color: #fff;
+ 	background-size: 200%;
+ 	transition: 0.6s;
+ 	background-image: linear-gradient(to left,#C4E538,#009432,#C4E538);
+ }
+
+ .sign-btn:hover {
+ 	background-position: right;
+ 	text-decoration: none;
+ 	color: #fff;
+ }
+
+ /************* End home page **************/

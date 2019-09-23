@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   # Home page
   root to:'static_pages#home'
+
+  # Devise
+  devise_for :users
 end
