@@ -5,8 +5,13 @@
       <h3 class="mb-5">
         <em>Vos tea times vont changer !</em>🌿
       </h3>
-      <%= link_to "Connexion", new_user_session_path, class: "sign-btn shadow" %>
-      <%= link_to "Inscription", new_user_registration_path, class: "sign-btn shadow" %>
+
+      <% if user_signed_in? %>
+        <%= link_to "Se déconnecter", destroy_user_session_path , method: 'delete', class: "out-btn shadow" %>
+      <% else %>
+        <%= link_to "Connexion", new_user_session_path, class: "sign-btn shadow" %>
+        <%= link_to "Inscription", new_user_registration_path, class: "sign-btn shadow" %>
+      <% end %>
     </div>
     <div class="overlay"></div>
   </header>
