@@ -69,6 +69,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'faker'
 gem 'table_print'
+gem 'letter_opener'
 gem 'dotenv-rails'
 gem 'database_cleaner'
 gem 'colorize', '~> 0.8.1'
