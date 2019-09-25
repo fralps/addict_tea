@@ -6,6 +6,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 
+  # Validations
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true, uniqueness: true,
+  format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: " : Veuillez utiliser un email valide" } 
+
+  # Relations
+  has_many :teas
+
   def welcome_send
   	UserMailer.welcome_email(self).deliver_now
   end

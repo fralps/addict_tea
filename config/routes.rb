@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   # Devise
   devise_for :users
+
+  # --------- Routes declarations ---------
+  resources :teas
 end
