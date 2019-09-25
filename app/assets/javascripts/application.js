@@ -10,14 +10,26 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// -------------- Homepage template -------------
+//
 //= require jquery/jquery.min
 //= require bootstrap/js/bootstrap.bundle.min
 //= require jquery-easing/jquery.easing.min
 //= require js/stylish-portfolio.min
 //
+// -------------- Dashboard template -------------
+//
+//= require dashboard/jquery/jquery.min
+//= require dashboard/bootstrap/js/bootstrap.bundle.min
+//= require dashboard/jquery-easing/jquery.easing.min
+//= require dashboard/js/sb-admin-2.min
+//= require dashboard/chart.js/Chart.min
+//= require dashboard/js/demo/chart-area-demo
+//= require dashboard/js/demo/chart-pie-demo
+//
+//
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
 // -------------- Personal JS ---------------
