@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   # --------- Routes declarations ---------
   resources :teas
+
+  resources :users, only: [:show]
 end
