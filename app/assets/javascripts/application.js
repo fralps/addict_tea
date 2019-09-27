@@ -33,3 +33,8 @@
 //= require_tree .
 
 // -------------- Personal JS ---------------
+
+$(document).ready(function() {
+	// Make an element disappear after a short time
+	$('.delay_fadeout').delay(2750).fadeOut(400); 
+});
