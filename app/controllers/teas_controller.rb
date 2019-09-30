@@ -17,7 +17,7 @@ class TeasController < ApplicationController
     @tea = Tea.new(user_id: current_user.id, name: params[:name], fermentation: params[:fermentation], infusion_time: params[:infusion_time], location: params[:location], brand: params[:brand], description: params[:description], grade: params[:grade])
     
     if @tea.save
-      redirect_to user_path(current_user.id)
+      redirect_to teas_path(current_user.id)
       flash[:success] = "Le thé a bien été ajouté 👍"
     else
       render :new
@@ -48,7 +48,7 @@ class TeasController < ApplicationController
     @tea = Tea.find(params[:id]) 
     if @tea.destroy
       redirect_to teas_path
-      flash[:success] = "Le thé a bien été supprimé"
+      flash[:success] = "Le thé a bien été supprimé 👍"
     else 
       flash[:alert] = "Un problème est survenu"
       render :edit

@@ -1,2 +1,72 @@
-<h1>Teas#show</h1>
-<p>Find me in app/views/teas/show.html.erb</p>
+<!-- Dashboard partial -->
+<%= render 'teas/dashboard' %>
+
+<!-- Show tea -->
+<div id="content">
+  <!-- Begin Page Content -->
+  <div class="container-fluid">
+    <div class="card shadow border-bottom-success col col-8 mx-auto">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-success"><%= @tea.name %></h6>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col col-3">
+           <p><i class="fas fa-leaf mr-1 text-success"></i><%= @tea.fermentation %></p>
+           <% if @tea.infusion_time > 1 %>
+           <p><i class="fas fa-stopwatch mr-1 text-success"></i><%= @tea.infusion_time %> minutes</p>
+           <% else %>
+           <p><i class="fas fa-stopwatch mr-1 text-success"></i><%= @tea.infusion_time %> minute</p>
+           <% end %>
+         </div>
+         <div class="col col-3">
+          <p><i class="fas fa-globe-americas mr-1 text-success"></i><%= @tea.location %></p>
+          <p><i class="far fa-registered mr-1 text-success"></i><%= @tea.brand %></p>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Display grade -->
+      <div class="row">
+        <div class="col text-center">
+          <% if @tea.grade == 0 %>
+          Note : <i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i>
+          <% elsif @tea.grade == 1 %>
+          Note : <i class="fas fa-leaf text-success"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i>
+          <% elsif @tea.grade == 2 %>
+          Note : <i class="fas fa-leaf text-success"></i><i class="fas fa-leaf text-success"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i>
+          <% elsif @tea.grade == 3 %>
+          Note : <i class="fas fa-leaf text-success"></i><i class="fas fa-leaf text-success"></i><i class="fas fa-leaf text-success"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i>
+          <% elsif @tea.grade == 4 %>
+          Note : <i class="fas fa-leaf text-success"></i><i class="fas fa-leaf text-success"></i><i class="fas fa-leaf text-success"></i><i class="fas fa-leaf text-success"></i><i class="fas fa-leaf"></i>
+          <% elsif @tea.grade == 5%>
+          Note : <i class="fas fa-leaf text-success"></i><i class="fas fa-leaf text-success"></i><i class="fas fa-leaf text-success"></i><i class="fas fa-leaf text-success"></i><i class="fas fa-leaf text-success"></i>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+      <div class="row mb-2">
+        <b class="mr-1">Description : </b>
+        <p><%= @tea.description %></p>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <%= link_to((edit_tea_path), class: "btn btn-success btn-icon-split mr-2") do %>
+          <span class="icon text-white-50">
+            <i class="fas fa-pen"></i>
+          </span>
+          <span class="text">Éditer</span>
+          <% end %>
+          <%= link_to(tea_path(@tea), method: :delete, class: "btn btn-danger btn-icon-split", data: { confirm: 'Êtes-vous sûr(e) ?'}) do %>
+          <span class="icon text-white-50">
+            <i class="fas fa-trash"></i>
+          </span>
+          <span class="text">Supprimer</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

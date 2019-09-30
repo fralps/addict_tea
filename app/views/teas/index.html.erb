@@ -23,8 +23,8 @@
 		</p>
 		<div class="row">
 			<% current_user.teas.each do |t| %>
-			<div class="col-xl-3 col-md-6 mb-4">
-				<div class="card border-left-success shadow h-100 py-2">
+			<div class="col col-md-4 mb-4">
+				<div class="card card-me h-100 py-2 shadow">
 					<%= link_to(tea_path(t.id)) do %>
 					<div class="card-body">
 						<div class="row no-gutters align-items-center">
@@ -34,7 +34,7 @@
 								<div class="h5 mb-0 mt-2 text-xs text-gray-800"><i class="fas fa-clock mr-1"></i><%= t.infusion_time %> minutes d'infusion</div>
 							</div>
 							<div class="col-auto">
-								<i class="fas fa-leaf fa-2x text-gray-300"></i>
+								<i class="fas fa-leaf fa-2x text-success"></i>
 							</div>
 						</div>
 					</div>
