@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   # --------- Routes declarations ---------
   resources :teas
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit]
 end
