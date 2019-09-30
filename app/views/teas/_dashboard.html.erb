@@ -33,141 +33,110 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-mug-hot"></i>
-        <span>Mes thés</span>
-      </a>
-      <div id="collapseTwo" class="collapse animated--grow-in" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="buttons.html"><i class="far fa-circle mr-2" style="color: lightgrey;"></i>Thés blancs</a>
-          <a class="collapse-item" href="cards.html"><i class="fas fa-circle mr-2" style="color: green;"></i>Thés verts</a>
-          <a class="collapse-item" href="cards.html"><i class="fas fa-circle mr-2" style="color: brown;"></i>Thés Oolongs</a>
-          <a class="collapse-item" href="cards.html"><i class="fas fa-circle mr-2" style="color: black;"></i>Thés noirs</a>
-          <a class="collapse-item" href="cards.html"><i class="fas fa-circle mr-2" style="color: lightgreen;"></i>Matcha</a>
-        </div>
-      </div>
+      <%= link_to(teas_path(current_user.id), class: "nav-link") do %>
+      <i class="fas fa-mug-hot"></i>
+      <span>Mes thés</span>
+      <% end %>
+      <%= link_to(teas_path(current_user.id), class: "nav-link") do %>
+      <i class="fas fa-mug-hot"></i>
+      <span>Mes infusions</span>
+      <% end %>
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-stopwatch"></i>
-        <span>Mon infuseur</span>
-      </a>
-      <div id="collapseUtilities" class="collapse animated--grow-in" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="utilities-color.html">Chronomètre</a>
-          <a class="collapse-item" href="utilities-border.html">Autres</a>
-        </div>
-      </div>
-    </li>
+     <%= link_to(static_pages_timer_path, class: "nav-link") do %>
+     <i class="fas fa-stopwatch"></i>
+     Timer
+     <% end %>
+   </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+   <!-- Divider -->
+   <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-      Autres
-    </div>
+   <!-- Heading -->
+   <div class="sidebar-heading">
+    Autres
+  </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+  <!-- Nav Item - Charts -->
+  <li class="nav-item">
+
+    <!-- Nav Item - Tables -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Pages</span>
-      </a>
-      <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Autres</h6>
-          <a class="collapse-item" href="login.html">Autres</a>
-          <a class="collapse-item" href="register.html">Autres</a>
-          <a class="collapse-item" href="forgot-password.html">Autres</a>
-          <div class="collapse-divider"></div>
-          <h6 class="collapse-header">Autres</h6>
-          <a class="collapse-item" href="404.html">Autres</a>
-          <a class="collapse-item" href="blank.html">Autres</a>
-        </div>
+      <a class="nav-link" href="tables.html">
+        <i class="fas fa-address-card"></i>
+        <span>À propos</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-    </li>
+    </ul>
+    <!-- End of Sidebar -->
 
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-address-card"></i>
-          <span>À propos</span></a>
-        </li>
+      <!-- Main Content -->
+      <div id="content">
 
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-      </ul>
-      <!-- End of Sidebar -->
-
-      <!-- Content Wrapper -->
-      <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-
-          <!-- Topbar -->
-          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-            <form class="d-none d-sm-inline-block form-inline mr-3 ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-              <div class="input-group">
-                <input type="text" class="form-control bg-light border-0 small" placeholder="Recherche.." aria-label="Search" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                  <button class="btn btn-success" type="button">
-                    <i class="fas fa-search fa-sm"></i>
-                  </button>
-                </div>
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <form class="d-none d-sm-inline-block form-inline mr-3 ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Recherche.." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-success" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
               </div>
-            </form>
+            </div>
+          </form>
 
-            <!-- Sidebar Toggle (Topbar) -->
-            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-              <i class="fa fa-bars"></i>
-            </button>
-            <%= link_to(new_tea_path, class: "btn btn-success btn-icon-split") do %>
-            <span class="icon text-white-40">
-              <i class="fas fa-plus-square"></i>
-            </span>
-            <span class="text">Ajouter un thé</span>
-            <% end %>
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <%= link_to(new_tea_path, class: "btn btn-success btn-icon-split") do %>
+          <span class="icon text-white-40">
+            <i class="fas fa-plus-square"></i>
+          </span>
+          <span class="text">Ajouter un thé</span>
+          <% end %>
 
-            <!-- Topbar Navbar -->
-            <ul class="navbar-nav ml-auto">
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
 
-              <div class="topbar-divider d-none d-sm-block"></div>
+            <div class="topbar-divider d-none d-sm-block"></div>
 
-              <!-- Nav Item - User Information -->
-              <li class="nav-item dropdown no-arrow">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.first_name %> <%= current_user.last_name %></span>
-                  <img class="img-profile rounded-circle" src="https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_1280.png">
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.first_name %> <%= current_user.last_name %></span>
+                <img class="img-profile rounded-circle" src="https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_1280.png">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Mon profil
                 </a>
-                <!-- Dropdown - User Information -->
-                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Mon profil
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Éditer mon profil
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Déconnexion
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </nav>
-          <!-- End of Topbar -->
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Éditer mon profil
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Déconnexion
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- End of Topbar -->

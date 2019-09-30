@@ -1,0 +1,47 @@
+<!-- Dashboard partial -->
+<%= render 'teas/dashboard' %>
+
+<div id="content">
+	<!-- Begin Page Content -->
+	<div class="container-fluid">
+		
+		<div class="d-sm-flex align-items-center justify-content-between mb-4">
+			<h2 class="h3 mb-0 text-gray-800">Timer</h2>
+		</div>
+
+		<div class="row">
+			<div class="col col-12 col-xs-8">
+
+				<div class="setters text-center">
+					<span class="minutes-set">
+						<button data-setter="minutes-plus">+</button>
+						<button data-setter="minutes-minus">-</button>
+					</span>
+					<span class="seconds-set">
+						<button data-setter="seconds-plus">+</button>
+						<button data-setter="seconds-minus">-</button>
+					</span>
+				</div>
+
+				<div class="circle text-center">
+					<svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+						<g transform="translate(110,110)">
+							<circle r="100" class="e-c-base"/>
+							<g transform="rotate(-90)">
+								<circle r="100" class="e-c-progress"/>
+								<g id="e-pointer">
+									<circle cx="100" cy="0" r="8" class="e-c-pointer"/>
+								</g>
+							</g>
+						</g>
+					</svg>
+				</div>
+
+				<div class="controlls text-center">
+					<div class="display-remain-time">02:00</div>
+					<button class="play" id="pause"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
