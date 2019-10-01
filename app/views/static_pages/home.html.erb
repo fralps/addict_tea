@@ -7,8 +7,8 @@
       </h3>
 
       <% if user_signed_in? %>
+      <%= link_to "Mon dashboard", static_pages_dashboard_path(current_user.id), class: "sign-btn shadow" %>
         <%= link_to "Se déconnecter", destroy_user_session_path , method: 'delete', class: "out-btn shadow" %>
-        <%= link_to "Mes thés", teas_path(current_user.id), class: "sign-btn shadow" %>
       <% else %>
         <%= link_to "Connexion", new_user_session_path, class: "sign-btn shadow" %>
         <%= link_to "Inscription", new_user_registration_path, class: "sign-btn shadow" %>

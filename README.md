@@ -1,24 +1,35 @@
-# README
+# Addict Tea
+*La plateforme de gestion de vos thés et infusions*  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+#### Projet Addict Tea  
 
-* Ruby version
+Vous voulez briller lors de vos tea times ?  
 
-* System dependencies
+Rendez-vous sur Addic Tea pour gérer vos stocks de thés et infusions
 
-* Configuration
+Vous aurez accès à un tas d'informations concernant la préparation de vos boissons. Du temps d'infusion à la provenance de vos thés, ainsi que d'un système de notation afin de repérer le thé qui vous fait le plus envie !  
 
-* Database creation
+Utilisez le timer intégrer afin de faire infuser vos boissons à la perfection !
+N'hésitez pas à recommander Addict Tea à vos proches et amis  
 
-* Database initialization
+#### Déroulé du projet
 
-* How to run the test suite
+Projet réalisé en une semaine dans le cadre d'un projet personnel afin de me perfectionner en ROR.
 
-* Services (job queues, cache servers, search engines, etc.)
+Branchement d'un thème bootstrap, finalisation du CRUD, bases de données, git, github, testing, devise...
 
-* Deployment instructions
+#### Mon projet
 
-* ...
+Pour tester la plateforme veuillez suivre les instructions ci-dessous :  
+
+1. Cloner le repo sur votre pc
+2. Ouvrir un terminal dans le dossier : `bundle install`
+3. Créer la BDD : `rails db:create`
+4. Passer les migrations : `rails db:migrate`
+5. Lancer le seed.rb : `rails db:seed`
+6. Lancer le serveur rails : `rails server`
+7. Vous rendre sur : http://localhost:3000/
+8. Enjoy 👍  
+
+N'hésiter pas à me faire parvenir vos retours 📨
