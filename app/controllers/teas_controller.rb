@@ -36,7 +36,7 @@ class TeasController < ApplicationController
         redirect_to tea_path(@tea)
         flash[:success] = "Le thé a bien été modifié 👍"
       else
-        flash[:alert] = "Vous n'avez pas rempli tous les champs, veuillez réessayez svp"
+        flash[:alert] = "Vous n'avez pas rempli tous les champs, veuillez réessayer svp"
         render :edit
       end
     else

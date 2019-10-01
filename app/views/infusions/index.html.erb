@@ -1,0 +1,47 @@
+<%= render 'layouts/dashboard' %>
+<div id="content">
+	<!-- Begin Page Content -->
+	<div class="container-fluid">
+
+		<!-- Page Heading -->
+		<div class="d-sm-flex align-items-center justify-content-between mb-4">
+			<h2 class="h3 mb-0 text-gray-800">Ma théière</h2>
+		</div>
+		<p class="mt-3">
+			<% if current_user.infusions.count == 0 %>
+			<h4><i class="fas fa-box-open mr-1"></i>Vous n'avez pas encore d'infusions dans votre boîte à infusions <i class="fas fa-leaf text-success"></i></h4><%= link_to(new_infusion_path, class: "btn btn-success btn-icon-split") do %>
+			<span class="icon text-white-40">
+				<i class="fas fa-plus-square"></i>
+			</span>
+			<span class="text">Ajouter une infusion</span>
+			<% end %>
+			<% elsif current_user.infusions.count == 1 || current_user.infusions.count == 0 %>
+			<h4><i class="fas fa-box-open mr-1"></i>Ma boîte à infusions : <%= current_user.infusions.count %> infusion 🌿</h4>
+			<% else %>
+			<h4><i class="fas fa-box-open mr-1"></i>Ma boîte à infusions : <%= current_user.infusions.count %> infusions 🌿</h4>
+			<% end %>
+		</p>
+		<div class="row">
+			<% current_user.infusions.each do |i| %>
+			<div class="col col-md-4 mb-4">
+				<div class="card card-me h-100 py-2 shadow">
+					<%= link_to(infusion_path(i.id)) do %>
+					<div class="card-body">
+						<div class="row no-gutters align-items-center">
+							<div class="col mr-2">
+								<div class="font-weight-bold text-success text-uppercase mb-1"><%= i.name %></div>
+								<div class="h5 mb-0 mt-2 text-xs text-gray-800"><i class="fas fa-clock mr-1"></i><%= i.infusion_time %> minutes d'infusion</div>
+							</div>
+							<div class="col-auto">
+								<i class="fas fa-leaf fa-2x text-success"></i>
+							</div>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+	<!-- End of Main Content -->
+</div>

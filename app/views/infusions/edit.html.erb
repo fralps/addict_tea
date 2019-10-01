@@ -1,0 +1,42 @@
+<%= render 'layouts/dashboard' %>
+<div id="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-md-6 offset-md-3">
+				<!-- Errors partial -->
+				<%= render 'infusions/error_messages' %>
+				<h2 class="text-center text-success">Modifier l'infusion</h2>
+				<hr>
+
+				<!-- Zone du formulaire -->
+				<%= form_tag url_for(action: 'update'), method: "patch", class: "user" do %>
+				<div class="form-group">
+
+					<%= text_field_tag 'name', @infusion.name, placeholder: "Nom de l'infusion..", class: "form-control form-control-user" %>
+
+					<%= text_field_tag 'infusion_time', @infusion.infusion_time, placeholder: "Temps d'infusion (en minutes)..", class: "form-control form-control-user mt-3" %>
+
+					<%= text_field_tag 'location', @infusion.location, placeholder: "Provenance de l'infusion..", class: "form-control form-control-user mt-3" %>
+
+					<%= text_field_tag 'brand', @infusion.brand, placeholder: "Marque..", class: "form-control form-control-user mt-3" %>
+
+					<%= text_area_tag 'description', @infusion.description, placeholder: "Petite description (goût, conseils)..", class: "form-control form-control-user mt-3", style: "border-radius: 20px;" %>
+					
+					<%= label_tag 'Note sur 5 :', nil, class: "mt-3" %>
+					<%= select_tag 'grade',options_for_select([1, 2, 3, 4, 5]), class: "form-control p-2", style: "border-radius: 30px;" %>
+
+					<%= submit_tag "✏️ Éditer", class: "btn btn-success btn-user btn-block mt-3" %>
+
+					<% end %>
+				</div>
+			</div>	
+		</div>
+		<div class="row">
+			<div class="col col-md-8 offset-md-2 text-center mb-3">
+				<hr>
+				<i class="fas fa-trash-alt text-danger"></i>
+				<%=link_to "Supprimer le thé", infusion_path(@infusion), method: :delete, data: { confirm: 'Êtes-vous sûr(e) ?'}, class: "text-danger" %>
+			</div>
+		</div>
+	</div>
+</div>

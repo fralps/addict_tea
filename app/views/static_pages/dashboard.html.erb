@@ -1,0 +1,76 @@
+<%= render 'layouts/dashboard' %>
+<div id="content">
+	<!-- Begin Page Content -->
+	<div class="container-fluid">
+
+		<!-- Page Heading -->
+		<div class="d-sm-flex align-items-center justify-content-between mb-4">
+			<h2 class="h3 mb-3 text-gray-800">Mon dashboard</h2>
+		</div>
+
+		<div class="row">
+			<div class="col border-right border-success">
+
+			<p class="mt-3">
+				<% if current_user.teas.count == 0 %>
+				<h4><i class="fas fa-box-open mr-1"></i>Vous n'avez pas encore de thés dans votre boîte à thés <i class="fas fa-leaf text-success"></i></h4><%= link_to(new_tea_path, class: "btn btn-success btn-icon-split") do %>
+				<span class="icon text-white-40">
+					<i class="fas fa-plus-square"></i>
+				</span>
+				<span class="text">Ajouter un thé</span>
+				<% end %>
+				<% elsif current_user.teas.count == 1 || current_user.teas.count == 0 %>
+				<h4><i class="fas fa-box-open mr-1"></i>Ma boîte à thés : <%= current_user.teas.count %> thé 🌿</h4>
+				<% else %>
+				<h4><i class="fas fa-box-open mr-1"></i>Ma boîte à thés : <%= current_user.teas.count %> thés 🌿</h4>
+				<% end %>
+				<%= link_to(new_tea_path, class: "btn btn-success btn-icon-split") do %>
+				<span class="icon text-white-40">
+					<i class="fas fa-plus-square"></i>
+				</span>
+				<span class="text">Ajouter un thé</span>
+				<% end %>
+			</p>
+
+			<p class="mt-4">
+				<% if current_user.infusions.count == 0 %>
+				<h4><i class="fas fa-box-open mr-1"></i>Vous n'avez pas encore d'infusions dans votre boîte à infusions <i class="fas fa-leaf text-success"></i></h4><%= link_to(new_infusion_path, class: "btn btn-success btn-icon-split") do %>
+				<span class="icon text-white-40">
+					<i class="fas fa-plus-square"></i>
+				</span>
+				<span class="text">Ajouter une infusion</span>
+				<% end %>
+				<% elsif current_user.infusions.count == 1 || current_user.infusions.count == 0 %>
+				<h4><i class="fas fa-box-open mr-1"></i>Ma boîte à infusions : <%= current_user.infusions.count %> infusion 🌿</h4>
+				<% else %>
+				<h4><i class="fas fa-box-open mr-1"></i>Ma boîte à infusions : <%= current_user.infusions.count %> infusions 🌿</h4>
+				<% end %>
+				<%= link_to(new_infusion_path, class: "btn btn-success btn-icon-split") do %>
+				<span class="icon text-white-40">
+					<i class="fas fa-plus-square"></i>
+				</span>
+				<span class="text">Ajouter une infusion</span>
+				<% end %>
+			</p>
+			</div>
+			
+			<div class="col mt-3 ml-3">
+				<h4>Mon profil</h4>
+				<hr>
+				<p><%= current_user.first_name %> <%= current_user.last_name %><br>
+					<%= current_user.email %>
+				</p>
+				
+			<p>
+				<%= link_to(edit_user_registration_path, class: "btn btn-info btn-icon-split") do %>
+				<span class="icon text-white-40">
+					<i class="fas fa-user-cog"></i>
+				</span>
+				<span class="text">Éditer mon profil</span>
+				<% end %> 
+			</p>
+			</div>
+		</div>
+		
+	</div>
+</div>

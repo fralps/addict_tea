@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   # Relations
   has_many :teas
+  has_many :infusions
 
   def welcome_send
   	UserMailer.welcome_email(self).deliver_now

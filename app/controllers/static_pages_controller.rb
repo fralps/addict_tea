@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
   def timer  	
   end
 
+  def dashboard
+  end
+
 end

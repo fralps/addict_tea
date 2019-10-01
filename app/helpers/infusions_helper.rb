@@ -1,0 +1,2 @@
+module InfusionsHelper
+end

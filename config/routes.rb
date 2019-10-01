@@ -6,12 +6,14 @@ Rails.application.routes.draw do
 
   # Static pages
   get 'static_pages/timer'
+  get 'static_pages/dashboard'
 
   # Devise
   devise_for :users
 
   # --------- Routes declarations ---------
   resources :teas
+  resources :infusions
 
   resources :users, only: [:show, :edit]
 end

@@ -33,6 +33,7 @@ Tea.destroy_all
 	puts "User created".green
 end
 
+# We create teas
 20.times do
 
 	tea = Tea.create!(
@@ -47,6 +48,22 @@ end
 
 	# Puts to show every time a tea is added
 	puts "Tea added".blue
+end
+
+# We create infusions
+20.times do
+
+	infusion = Infusion.create!(
+		name: Faker::Coffee.blend_name,
+		infusion_time: rand(1..6),
+		location: Faker::Address.city,
+		brand: Faker::Company.name,
+		description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: false),
+		grade: rand(1..5),
+		user_id: rand(1..10))
+
+	# Puts to show every time an infusion is added
+	puts "Infusion added".blue
 end
 
 # We create a user with our email and password
