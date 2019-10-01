@@ -6,7 +6,7 @@
 
 Vous voulez briller lors de vos tea times ?  
 
-Rendez-vous sur Addic Tea pour gérer vos stocks de thés et infusions
+Rendez-vous sur Addict Tea pour gérer vos stocks de thés et infusions
 
 Vous aurez accès à un tas d'informations concernant la préparation de vos boissons. Du temps d'infusion à la provenance de vos thés, ainsi que d'un système de notation afin de repérer le thé qui vous fait le plus envie !  
 
