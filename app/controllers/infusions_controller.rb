@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class InfusionsController < ApplicationController
-	before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @infusions = Infusion.all
@@ -15,7 +17,7 @@ class InfusionsController < ApplicationController
 
   def create
     @infusion = Infusion.new(user_id: current_user.id, name: params[:name], infusion_time: params[:infusion_time], location: params[:location], brand: params[:brand], description: params[:description], grade: params[:grade])
-    
+
     if @infusion.save
       redirect_to infusions_path(current_user.id)
       flash[:success] = "L'infusion a bien été ajoutée 👍"
@@ -45,12 +47,12 @@ class InfusionsController < ApplicationController
   end
 
   def destroy
-    @infusion = Infusion.find(params[:id]) 
+    @infusion = Infusion.find(params[:id])
     if @infusion.destroy
       redirect_to infusions_path
       flash[:success] = "L'infusion a bien été supprimée 👍"
-    else 
-      flash[:alert] = "Un problème est survenu"
+    else
+      flash[:alert] = 'Un problème est survenu'
       render :edit
     end
   end

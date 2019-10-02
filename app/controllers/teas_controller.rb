@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TeasController < ApplicationController
   before_action :authenticate_user!
 
@@ -15,10 +17,10 @@ class TeasController < ApplicationController
 
   def create
     @tea = Tea.new(user_id: current_user.id, name: params[:name], fermentation: params[:fermentation], infusion_time: params[:infusion_time], location: params[:location], brand: params[:brand], description: params[:description], grade: params[:grade])
-    
+
     if @tea.save
       redirect_to teas_path(current_user.id)
-      flash[:success] = "Le thé a bien été ajouté 👍"
+      flash[:success] = 'Le thé a bien été ajouté 👍'
     else
       render :new
     end
@@ -34,7 +36,7 @@ class TeasController < ApplicationController
     if @tea.user == current_user
       if @tea.update(user_id: current_user.id, name: params[:name], fermentation: params[:fermentation], infusion_time: params[:infusion_time], location: params[:location], brand: params[:brand], description: params[:description], grade: params[:grade])
         redirect_to tea_path(@tea)
-        flash[:success] = "Le thé a bien été modifié 👍"
+        flash[:success] = 'Le thé a bien été modifié 👍'
       else
         flash[:alert] = "Vous n'avez pas rempli tous les champs, veuillez réessayer svp"
         render :edit
@@ -45,12 +47,12 @@ class TeasController < ApplicationController
   end
 
   def destroy
-    @tea = Tea.find(params[:id]) 
+    @tea = Tea.find(params[:id])
     if @tea.destroy
       redirect_to teas_path
-      flash[:success] = "Le thé a bien été supprimé 👍"
-    else 
-      flash[:alert] = "Un problème est survenu"
+      flash[:success] = 'Le thé a bien été supprimé 👍'
+    else
+      flash[:alert] = 'Un problème est survenu'
       render :edit
     end
   end

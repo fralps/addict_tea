@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Home page
-  root to:'static_pages#home'
+  root to: 'static_pages#home'
 
   # Static pages
   get 'static_pages/timer'
@@ -15,5 +17,5 @@ Rails.application.routes.draw do
   resources :teas
   resources :infusions
 
-  resources :users, only: [:show, :edit]
+  resources :users, only: %i[show edit]
 end
