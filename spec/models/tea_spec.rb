@@ -3,10 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe Tea, type: :model do
-
   # --------- Validation tests ------------
   context 'validations' do
-
     describe 'validations' do
       it { should validate_presence_of(:name) }
       it { should validate_length_of(:name) }
@@ -19,7 +17,7 @@ RSpec.describe Tea, type: :model do
       it { should validate_length_of(:description) }
       it { should validate_presence_of(:grade) }
       it { should validate_presence_of(:user_id) }
-      puts "All validations tests for Tea model OK 👍".green
+      puts 'All validations tests for Tea model OK 👍'.green
     end
   end
 
@@ -27,9 +25,7 @@ RSpec.describe Tea, type: :model do
   context 'associations' do
     describe 'associations' do
       it { should belong_to(:user) }
-      puts "All associations tests for Tea model OK 👍".green
+      puts 'All associations tests for Tea model OK 👍'.green
     end
   end
 end
-
-

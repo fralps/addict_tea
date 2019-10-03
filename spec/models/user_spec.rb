@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  
   # --------- Validations test ------------
   context 'validations' do
     describe 'validations' do
@@ -12,7 +11,7 @@ RSpec.describe User, type: :model do
       it { should validate_presence_of(:email) }
       it { should validate_presence_of(:password) }
       it { should validate_length_of(:password) }
-      puts "All validations tests for User model OK 👍".green
+      puts 'All validations tests for User model OK 👍'.green
     end
   end
 
@@ -21,7 +20,7 @@ RSpec.describe User, type: :model do
     describe 'associations' do
       it { should have_many(:teas) }
       it { should have_many(:infusions) }
-      puts "All associations tests for User model OK 👍".green
+      puts 'All associations tests for User model OK 👍'.green
     end
   end
 end
