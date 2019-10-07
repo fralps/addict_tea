@@ -15,7 +15,7 @@ N'hésitez pas à recommander Addict Tea à vos proches et amis
 
 #### Déroulé du projet
 
-Projet réalisé en une semaine dans le cadre d'un projet personnel afin de me perfectionner en ROR.
+Projet réalisé en deux semaines dans le cadre d'un projet personnel afin de me perfectionner en ROR.
 
 Branchement d'un thème bootstrap, finalisation du CRUD, bases de données, git, github, testing, devise...
 
