@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # Static pages
   get 'static_pages/timer'
   get 'static_pages/dashboard'
+  get 'static_pages/about'
 
   # Devise
   devise_for :users
