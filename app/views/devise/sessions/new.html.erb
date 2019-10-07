@@ -3,7 +3,7 @@
     <div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-      <h2>Connexion</h2>
+      <h2 class="text-success">Connexion</h2>
       <hr>
 
       <div class="txtb">
@@ -24,7 +24,7 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Je me connecte", class: "logbtn" %>
+        <%= f.submit "Je me connecte", class: "btn btn-success logbtn" %>
       </div>
       <% end %>
     </div>

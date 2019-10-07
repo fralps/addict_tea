@@ -4,7 +4,7 @@
 
 			<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
-			<h2>Mince, j'ai oublié mon mot de passe ! 🤔</h2>
+			<h2 class="text-success">Mince, j'ai oublié mon mot de passe ! 🤔</h2>
 			<hr>
 
 			<%= render "devise/shared/error_messages", resource: resource %>
@@ -15,7 +15,7 @@
 			</div>
 
 			<div class="actions">
-				<%= f.submit "Envoyer", class: "logbtn" %>
+				<%= f.submit "Envoyer", class: "btn btn-success logbtn" %>
 			</div>
 			<% end %>
 		</div>
