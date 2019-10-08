@@ -24,7 +24,6 @@
 //= require dashboard/jquery-easing/jquery.easing.min
 //= require dashboard/js/sb-admin-2.min
 //
-//
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
