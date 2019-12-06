@@ -6,12 +6,6 @@ require 'colorize'
 # Faker gem
 require 'faker'
 
-# To limit the database entries
-# each time we seed we delete the previous ones and we reset database's ids
-require 'database_cleaner'
-
-DatabaseCleaner.clean_with(:truncation)
-
 User.destroy_all
 Tea.destroy_all
 
